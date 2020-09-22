@@ -1,10 +1,13 @@
-$(document).ready(function () {
-    $("#btnSubmit").on(("click", function () {
+$(function () {
+    $("body").append(<div></div>);
+
+    $("#btnSubmit").click(function () {
         alert("button is clicked!");
-    }));
+    });
 
     $("form").submit(function () {
-        alert($("input[name=inputInfo]").val());
+        let textValue = $("input[name=inputInfo]").val();
+        alert(textValue);
     });
 
     $("#btnSubmit").prop("disabled", true);
@@ -14,3 +17,5 @@ $(document).ready(function () {
         }
     });
 })
+
+
