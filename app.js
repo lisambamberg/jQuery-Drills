@@ -1,13 +1,17 @@
 $(function () {
-    $("body").append(<div></div>);
+    $("body").append("<div></div>");
 
-    $("#btnSubmit").click(function () {
-        alert("button is clicked!");
-    });
+    // $("#btnSubmit").click(function () {
+    //     alert("button is clicked!");
+    // });
 
-    $("form").submit(function () {
+    $("form").submit(function (e) {
+        e.preventDefault();
         let textValue = $("input[name=inputInfo]").val();
-        alert(textValue);
+        //alert(textValue);
+        let h2 = $("<h2></h2>");
+        h2.append(textValue);
+        $("div").append(h2);
     });
 
     $("#btnSubmit").prop("disabled", true);
